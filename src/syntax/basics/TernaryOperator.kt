@@ -1,4 +1,4 @@
-package language
+package syntax.basics
 
 /*
  * Тернарный оператор в Kotlin (альтернатива через if и when)

@@ -1,4 +1,4 @@
-package language
+package syntax.control_flow
 
 /*
  * Условный оператор if в Kotlin

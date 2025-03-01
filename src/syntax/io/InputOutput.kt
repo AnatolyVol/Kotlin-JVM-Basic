@@ -1,4 +1,4 @@
-package language
+package syntax.io
 
 /*
  * Ввод и вывод данных в Kotlin

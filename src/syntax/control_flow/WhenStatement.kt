@@ -1,4 +1,4 @@
-package language
+package syntax.control_flow
 
 /*
  * Условный оператор when в Kotlin

@@ -1,4 +1,4 @@
-package language
+package syntax.basics
 
 /*
  * Переменные и типы данных в Kotlin

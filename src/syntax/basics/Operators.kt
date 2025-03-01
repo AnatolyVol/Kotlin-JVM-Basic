@@ -1,4 +1,4 @@
-package language
+package syntax.basics
 
 /*
  * Операции в Kotlin

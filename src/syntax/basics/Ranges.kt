@@ -1,4 +1,4 @@
-package language
+package syntax.basics
 
 /*
  * Диапазоны чисел (Ranges) в Kotlin
