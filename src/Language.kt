@@ -316,6 +316,125 @@ fun main() {
 //    }
 
 
+    /*
+* Массивы
+*/
+
+    val planets = arrayOf("Меркурий", "Венера", "Земля", "Марс", "Юпитер", "Сатурн", "Уран", "Нептун", "Плутон") // Массив строк
+    val priceOfOrders = arrayOf(1250, 350, 7490, 19900) // Массив чисел
+    val statusOfOrders = arrayOf(true, false, true, true) // Массив логических значений
+    val planetName = planets[0]
+    for(index in planets.indices) { // в качестве последовательности используется диапазон индексов массива
+        if(index + 1 < planets.size) { // проверяем, что индекс следующего элемента существует
+            println(planets[index] + " и " + planets[index + 1])
+        }
+    }
+
+    val orders = arrayOf("Заказ #1", "Заказ #2", "Заказ #3", "Заказ #4")
+    println("Список приоритетных заказов:")
+    for(index in orders.indices) {
+        if(index % 2 == 0) { // проверяем, что индекс элемента чётный
+            println(" - ${orders[index]}")
+        }
+    }
+    println("Список неприоритетных заказов:")
+    for(index in orders.indices) {
+        if(index % 2 != 0) { // проверяем, что индекс элемента нечётный
+            println(" - ${orders[index]}")
+        }
+    }
+
+//    Команда intArrayOf() - создает массив типа Int;
+//    Команда charArrayOf() - создает массив типа Char;
+//    Команда booleanArrayOf() - создает массив типа Boolean;
+//    Команда doubleArrayOf() - создает массив типа Double.
+
+    val maxGuestCount = 10
+    val guests = Array<String>(maxGuestCount) { "" }
+
+//    Атрибут size - используется для создания новых массивов той же длины, что и существующий;
+//    Атрибут indices - используется для проверки наличия индекса в массиве, модификации элементов в цикле и перебора элементов в цикле по условию;
+//    Атрибут lastIndex - используется для проверки выхода текущего индекса за верхнюю границу массива.
+
+    /*
+* Команда split()
+*/
+
+    val userName = "Jonny Jonson"
+    val userNameParts = userName.split(" ")
+    val firstName = userNameParts[0]
+    val secondName = userNameParts[1]
+
+    /*
+* Команда substringAfter()
+*/
+
+    val inputData = "Ваше имя: Джонни Джонсон"
+    val userName1 = inputData.substringAfter("Ваше имя: ")
+
+    /*
+* Сортировка массива
+*/
+
+    val salaries= arrayOf(120000, 80000, 200000, 320000, 500000)
+// внешний цикл для обхода всех значений в массиве
+    for(i in salaries.indices) {
+        // внутренний цикл для сверки каждого элемента массива со всеми остальными
+        for(j in salaries.indices) {
+            // проверяем, если элемент A меньше, чем элемент B
+            if(salaries[i] < salaries[j]) {
+                val tempSalary = salaries[i] // создаем временную переменную под элемент А
+                salaries[i] = salaries[j] // записываем по индексу элемента А значение элемента B
+                salaries[j] = tempSalary // записываем по индексу элемента B значение элемента A
+            }
+        }
+    }
+
+    /*
+* Многомерные массивы
+*/
+
+    val planetsAndSatellites = arrayOf(
+        arrayOf("Меркурий", "Спутиков нет"),
+        arrayOf("Венера", "Спутников нет"),
+        arrayOf("Земля", "Луна"),
+        arrayOf("Марс", "Деймос", "Фобос"),
+        arrayOf("Юпитер", "Ио", "Европа", "Ганимед", "Каллисто", "Пасифе", "Ананке", "Леда"),
+        arrayOf("Сатурн", "Титан", "Рея", "Тефия", "Диона", "Энцелад", "Мимас", "Гиперион"),
+        arrayOf("Уран", "27 спутников"),
+        arrayOf("Нептун", "14 спутников"),
+        arrayOf("Плутон", "5 спутников"),
+    ) // Массив, содержащий сведения о планетах и их спутниках
+
+    /*
+* Функции
+*/
+
+    fun read() {
+        // тело функции, здесь пишется код для выполнения
+    }
+
+    fun read1(): String { // возвращаем String
+        return "Hello, World!" // результат также должен являться строкой
+    }
+
+//    fun read(openSource: String, privateSource: String): String { /*...*/ }
+
+//    fun read3(
+//        openSource: String = "Открытый ресурс",
+//        privateSource: String = "Закрытый ресурс"
+//    ): String { /*...*/ }
+
+    fun calculateSpaceCats(
+        cats: Array<String>, // обязательный параметр
+        isReallySpace: Boolean = true, // параметр со значением по умолчанию
+        isFindSpaceship: Boolean = true,  // параметр со значением по умолчанию
+        searchRadius: Double = 5.5,  // параметр со значением по умолчанию
+        startPointX: Double = 0.0, // параметр со значением по умолчанию
+        startPointY: Double = 0.0, // параметр со значением по умолчанию
+        startPointZ: Double = 0.0, // параметр со значением по умолчанию
+    ) { /*...*/ }
 
 
+    
 }
