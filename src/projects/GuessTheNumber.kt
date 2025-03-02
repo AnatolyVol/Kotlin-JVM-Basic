@@ -11,7 +11,7 @@ fun startGame() {
         3. Выйти из игры
     """.trimIndent() + "\n")
 
-    println("Выберите пункт:")
+    print("Выберите пункт: ")
 
     val stepNumber = readln().toInt()
 
@@ -25,6 +25,22 @@ fun startGame() {
 
 fun playGame() {
     println("Идет запуск игры")
+    val correctNumber = readln().toInt()
+
+    while (true) {
+        println("Введите число:")
+        var number = readln().toInt()
+
+        when {
+            number !in 1..100 -> println("Число $number лежит за пределами заданного промежутка")
+            number == correctNumber -> {
+                println("Вы угадали число!")
+                break
+            }
+            number < correctNumber -> println("Загаданное число больше")
+            number > correctNumber -> println("Загаданное число меньше")
+        }
+    }
 }
 
 fun settingsGame() {
