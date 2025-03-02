@@ -21,24 +21,27 @@ fun main() {
 fun printMainMenu(isFirstStart: Boolean) {
     if (!isFirstStart)
         println()
-    println("""
+    println(
+        """
         1. Запустить игру
         2. Гид по игре
         3. Выйти из игры
-    """.trimIndent() + "\n")
+    """.trimIndent() + "\n"
+    )
 }
 
 fun readItemMenu(): Int {
     val menuItems = arrayOf("1", "2", "3")
 
-    println("Выберите пункт:")
-    val stepNumber = readln()
-
-    if(stepNumber !in menuItems) {
-        println("Некорректный номер пункта меню")
-        return -1
+    while(true) {
+        println("Выберите пункт:")
+        val stepNumber = readln()
+        if(stepNumber !in menuItems) {
+            println("Некорректный номер пункта меню")
+        } else {
+            return stepNumber.toInt()
+        }
     }
-    return stepNumber.toInt()
 }
 
 fun runGame() {
@@ -55,6 +58,7 @@ fun runGame() {
                 println("Вы угадали число!")
                 break
             }
+
             number < correctNumber -> println("Загаданное число больше")
             number > correctNumber -> println("Загаданное число меньше")
         }
