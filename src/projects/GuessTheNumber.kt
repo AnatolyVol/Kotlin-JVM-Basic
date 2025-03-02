@@ -4,17 +4,23 @@ fun main() {
     val game = 1
     val guide = 2
     val exit = 3
+    var isFirstStart = true
 
-    printMainMenu()
-    val selectedItemMenu = readItemMenu()
-    when (selectedItemMenu) {
-        game -> runGame()
-        guide -> showGuide()
-        exit -> System.exit(0)
+    while (true) {
+        printMainMenu(isFirstStart)
+        val selectedItemMenu = readItemMenu()
+        when (selectedItemMenu) {
+            game -> runGame()
+            guide -> showGuide()
+            exit -> System.exit(0)
+        }
+        isFirstStart = false
     }
 }
 
-fun printMainMenu() {
+fun printMainMenu(isFirstStart: Boolean) {
+    if (!isFirstStart)
+        println()
     println("""
         1. Запустить игру
         2. Гид по игре
