@@ -29,18 +29,16 @@ fun printMainMenu(isFirstStart: Boolean) {
 }
 
 fun readItemMenu(): Int {
-    println("Выберите пункт:\n")
-    val stepNumber = readln().toInt()
+    val menuItems = arrayOf("1", "2", "3")
 
-    return when (stepNumber) {
-        1 -> 1
-        2 -> 2
-        3 -> 3
-        else -> {
-            println("Некорректный ввод, попробуйте снова.")
-            readItemMenu()
-        }
+    println("Выберите пункт:")
+    val stepNumber = readln()
+
+    if(stepNumber !in menuItems) {
+        println("Некорректный номер пункта меню")
+        return -1
     }
+    return stepNumber.toInt()
 }
 
 fun runGame() {
@@ -49,7 +47,7 @@ fun runGame() {
 
     while (true) {
         println("Введите число:")
-        var number = readln().toInt()
+        val number = readln().toInt()
 
         when {
             number !in 1..100 -> println("Число $number лежит за пределами заданного промежутка")
