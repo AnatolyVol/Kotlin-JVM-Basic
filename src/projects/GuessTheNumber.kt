@@ -5,6 +5,7 @@ fun main() {
 }
 
 fun startGame() {
+    println("Выберите пункт:")
     val number = readln().toInt()
     when (number) {
         1 -> playGame()
