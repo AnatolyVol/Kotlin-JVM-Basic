@@ -1,30 +1,44 @@
 package projects
 
 fun main() {
-    startGame()
+    val game = 1
+    val guide = 2
+    val exit = 3
+
+    printMainMenu()
+    val selectedItemMenu = readItemMenu()
+    when (selectedItemMenu) {
+        game -> runGame()
+        guide -> showGuide()
+        exit -> System.exit(0)
+    }
 }
 
-fun startGame() {
+fun printMainMenu() {
     println("""
         1. Запустить игру
         2. Гид по игре
         3. Выйти из игры
     """.trimIndent() + "\n")
+}
 
-    print("Выберите пункт: ")
-
+fun readItemMenu(): Int {
+    println("Выберите пункт:\n")
     val stepNumber = readln().toInt()
 
-    when (stepNumber) {
-        1 -> playGame()
-        2 -> settingsGame()
-        3 -> exitGame()
-        else -> println("Некорректный ввод.")
+    return when (stepNumber) {
+        1 -> 1
+        2 -> 2
+        3 -> 3
+        else -> {
+            println("Некорректный ввод, попробуйте снова.")
+            readItemMenu()
+        }
     }
 }
 
-fun playGame() {
-    println("Идет запуск игры")
+fun runGame() {
+    println("Идет запуск игры\n")
     val correctNumber = readln().toInt()
 
     while (true) {
@@ -43,27 +57,20 @@ fun playGame() {
     }
 }
 
-fun settingsGame() {
-    println("Открывается гид по игре")
-
+fun showGuide() {
+    println("Открывается гид по игре\n")
     val questionOne = """
         Вопрос: Какая цель игры?
         Ответ: Целью игры является отгадывание числа, придуманного ИИ "Алиса", за минимальное число попыток.
     """.trimIndent()
-
     val questionTwo = """
         Вопрос: Сколько дается попыток?
         Ответ: Количество попыток вычисляет Алиса по собственной формуле, и она отказывается раскрывать ее.
     """.trimIndent()
-
     val questionThree = """
         Вопрос: Есть ограничение по времени?
         Ответ: Алиса очень терпеливая, она будет ждать вашего ответа до тех пор, пока ее Создатель не забудет оплатить счет за аренду сервера.
     """.trimIndent()
 
     println("$questionOne\n\n$questionTwo\n\n$questionThree")
-}
-
-fun exitGame() {
-    println("Идет закрытие игры")
 }
