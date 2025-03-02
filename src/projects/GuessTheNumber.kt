@@ -1,17 +1,26 @@
 package projects
 
-fun main(){
+fun main() {
+    startGame()
+}
 
+fun startGame() {
+    val number = readln().toInt()
+    when (number) {
+        1 -> playGame()
+        2 -> settingsGame()
+        3 -> exitGame()
+    }
 }
 
 fun playGame() {
-    println("1. Запустить игру")
-}
-
-fun stopGame() {
-    println("3. Выйти из игры")
+    println("Идет запуск игры")
 }
 
 fun settingsGame() {
-    println("2. Гид по игре")
+    println("Открывается гид по игре")
+}
+
+fun exitGame() {
+    println("Идет закрытие игры")
 }
