@@ -50,6 +50,7 @@ fun runGame() {
     val minRangeNumber = 0
     val maxRangeNumber = 100
     val correctNumber = (minRangeNumber..maxRangeNumber).random()
+    var count = 0
 
     while (true) {
         println("Введите число:")
@@ -58,12 +59,25 @@ fun runGame() {
         when {
             number !in minRangeNumber..maxRangeNumber -> println("Число $number лежит за пределами заданного промежутка")
             number == correctNumber -> {
-                println("Вы угадали число!")
+                count++
+                println(
+                    """
+                    Вы угадали число!
+                    Кол-во попыток: $count
+                """.trimIndent()
+                )
                 break
             }
 
-            number < correctNumber -> println("Загаданное число больше")
-            number > correctNumber -> println("Загаданное число меньше")
+            number < correctNumber -> {
+                count++
+                println("Загаданное число больше")
+            }
+
+            number > correctNumber -> {
+                count++
+                println("Загаданное число меньше")
+            }
         }
     }
 }
