@@ -2,7 +2,6 @@ package projects
 
 fun main(){
 
-    println("2. Гид по игре")
 }
 
 fun playGame() {
@@ -11,4 +10,8 @@ fun playGame() {
 
 fun stopGame() {
     println("3. Выйти из игры")
+}
+
+fun settingsGame() {
+    println("2. Гид по игре")
 }
