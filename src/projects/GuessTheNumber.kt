@@ -33,10 +33,10 @@ fun printMainMenu(isFirstStart: Boolean) {
 fun readItemMenu(): Int {
     val menuItems = arrayOf("1", "2", "3")
 
-    while(true) {
+    while (true) {
         println("Выберите пункт:")
         val stepNumber = readln()
-        if(stepNumber !in menuItems) {
+        if (stepNumber !in menuItems) {
             println("Некорректный номер пункта меню")
         } else {
             return stepNumber.toInt()
@@ -46,14 +46,17 @@ fun readItemMenu(): Int {
 
 fun runGame() {
     println("Идет запуск игры\n")
-    val correctNumber = readln().toInt()
+
+    val minRangeNumber = 0
+    val maxRangeNumber = 100
+    val correctNumber = (minRangeNumber..maxRangeNumber).random()
 
     while (true) {
         println("Введите число:")
         val number = readln().toInt()
 
         when {
-            number !in 1..100 -> println("Число $number лежит за пределами заданного промежутка")
+            number !in minRangeNumber..maxRangeNumber -> println("Число $number лежит за пределами заданного промежутка")
             number == correctNumber -> {
                 println("Вы угадали число!")
                 break
