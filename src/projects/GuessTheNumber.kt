@@ -11,7 +11,7 @@ fun startGame() {
         3. Выйти из игры
     """.trimIndent() + "\n")
 
-    println("Выберите пункт:\n")
+    println("Выберите пункт:")
 
     val stepNumber = readln().toInt()
 
@@ -19,6 +19,7 @@ fun startGame() {
         1 -> playGame()
         2 -> settingsGame()
         3 -> exitGame()
+        else -> println("Некорректный ввод.")
     }
 }
 
@@ -28,6 +29,23 @@ fun playGame() {
 
 fun settingsGame() {
     println("Открывается гид по игре")
+
+    val questionOne = """
+        Вопрос: Какая цель игры?
+        Ответ: Целью игры является отгадывание числа, придуманного ИИ "Алиса", за минимальное число попыток.
+    """.trimIndent()
+
+    val questionTwo = """
+        Вопрос: Сколько дается попыток?
+        Ответ: Количество попыток вычисляет Алиса по собственной формуле, и она отказывается раскрывать ее.
+    """.trimIndent()
+
+    val questionThree = """
+        Вопрос: Есть ограничение по времени?
+        Ответ: Алиса очень терпеливая, она будет ждать вашего ответа до тех пор, пока ее Создатель не забудет оплатить счет за аренду сервера.
+    """.trimIndent()
+
+    println("$questionOne\n\n$questionTwo\n\n$questionThree")
 }
 
 fun exitGame() {
