@@ -5,9 +5,17 @@ fun main() {
 }
 
 fun startGame() {
-    println("Выберите пункт:")
-    val number = readln().toInt()
-    when (number) {
+    println("""
+        1. Запустить игру
+        2. Гид по игре
+        3. Выйти из игры
+    """.trimIndent() + "\n")
+
+    println("Выберите пункт:\n")
+
+    val stepNumber = readln().toInt()
+
+    when (stepNumber) {
         1 -> playGame()
         2 -> settingsGame()
         3 -> exitGame()
