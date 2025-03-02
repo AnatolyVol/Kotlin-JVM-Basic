@@ -1,6 +1,6 @@
 package projects
 
-fun main() {
+private fun main() {
     val game = 1
     val guide = 2
     val exit = 3
@@ -18,7 +18,7 @@ fun main() {
     }
 }
 
-fun printMainMenu(isFirstStart: Boolean) {
+private fun printMainMenu(isFirstStart: Boolean) {
     if (!isFirstStart)
         println()
     println(
@@ -30,7 +30,7 @@ fun printMainMenu(isFirstStart: Boolean) {
     )
 }
 
-fun readItemMenu(): Int {
+private fun readItemMenu(): Int {
     val menuItems = arrayOf("1", "2", "3")
 
     while (true) {
@@ -44,7 +44,7 @@ fun readItemMenu(): Int {
     }
 }
 
-fun runGame() {
+private fun runGame() {
     println("Идет запуск игры\n")
 
     val minRangeNumber = 0
@@ -82,7 +82,7 @@ fun runGame() {
     }
 }
 
-fun showGuide() {
+private fun showGuide() {
     println("Открывается гид по игре\n")
     val questionOne = """
         Вопрос: Какая цель игры?
