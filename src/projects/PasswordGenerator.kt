@@ -50,9 +50,17 @@ private fun printMainMenu(isFirstStart: Boolean) {
 }
 
 private fun readItemMenu(): Int {
-    println("Выберите пункт:")
-    val menu = readln().toInt()
-    return menu
+    val menuItems = arrayOf("1", "2", "3", "4")
+
+    while (true) {
+        println("Выберите пункт:")
+        val menu = readln()
+        if (menu !in menuItems) {
+            println("Некорректный номер пункта меню")
+        } else {
+            return menu.toInt()
+        }
+    }
 }
 
 private fun readPasswordLength(): Int {
@@ -81,10 +89,8 @@ private fun generatePassword(passwordLength: Int, symbolTypes: String): String {
 
     var password = Array<Char>(passwordLength) { ' ' }
 
-    var privateKey = 1234567890
-    var privateKey2 = 1234567890
-
     for (i in password.indices) {
+        var privateKey2 = (0..1234567890).random()
         var type = privateKey2 % 4
         var symbols: Array<Char> = when (type) {
             0 -> uppercaseSymbols
@@ -93,10 +99,7 @@ private fun generatePassword(passwordLength: Int, symbolTypes: String): String {
             3 -> digits
             else -> emptyArray()
         }
-        var symbolIndex = privateKey % symbols.size
-        password[i] = symbols[symbolIndex]
-        privateKey /= i + 1
-        privateKey2 /= i + 1
+        password[i] = symbols[(0..symbols.lastIndex).random()]
     }
     var passwordResult = ""
     for (i in password.indices) {
