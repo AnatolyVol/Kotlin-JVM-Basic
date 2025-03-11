@@ -11,7 +11,6 @@
 4. [Проект "Генератор паролей"](https://github.com/AnatolyVol/Kotlin-JVM-Basic/blob/main/src/projects/PasswordGenerator.kt)
 5. [Проект "Загрузчик операционной системы"](https://github.com/AnatolyVol/Kotlin-JVM-Basic/blob/main/src/projects/TheOperatingSystemBootloader.kt)
 6. [Проект "Дешифратор сообщений"](https://github.com/AnatolyVol/Kotlin-JVM-Basic/blob/main/src/projects/MessageDecoder.kt)
-7. [Игра "Города"]()
-8. [Игра "Кто хочет стать миллионером?"]()
+7. [Игра "Города"](https://github.com/AnatolyVol/Kotlin-JVM-Basic/blob/main/src/projects/Cities.kt)
 
-![image](https://static.tildacdn.com/tild3966-3261-4230-b732-333539393235/Frame_891.svg)
+![image](https://stepik.org/certificate/5c3c4666676a86ec1bc01ccfb10785d699103448.png?resolution=high)
